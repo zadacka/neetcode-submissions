@@ -1,0 +1,15 @@
+class Solution:
+    def twoSum_On2(self, nums: List[int], target: int) -> List[int]:
+        length = len(nums)
+        for i in range(length - 1):
+            for j in range(i+1, length):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+    
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = dict()
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in hashmap:
+                return [hashmap[diff], i]
+            hashmap[n] = i
